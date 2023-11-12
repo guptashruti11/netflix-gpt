@@ -3,12 +3,12 @@ import { useState,useRef } from "react";
 import { checkValidData } from "../utils/validate";
 import {createUserWithEmailAndPassword ,signInWithEmailAndPassword} from "firebase/auth";
 import { auth } from "../utils/firebase";
-import { useNavigate } from "react-router-dom";
+
 import {updateProfile } from "firebase/auth";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
 const Login=()=>{
-   const navigate=useNavigate();
+   
     const [isSignIn,setisSignIn]=useState(true);
     const [errorMes,seterrMes]=useState(null);
     const dispatch=useDispatch();
@@ -40,7 +40,7 @@ const Login=()=>{
               displayName:displayName,photoURL:photoURL
             })
             );
-            navigate("/browse");
+           
          }).catch((error) => {
          seterrMes(error.message);
          });
@@ -58,8 +58,7 @@ const Login=()=>{
        signInWithEmailAndPassword(auth,email.current.value, password.current.value)
         .then((userCredential) => {
         const user = userCredential.user;
-        console.log(user);
-        navigate("/browse");
+        
         })
        .catch((error) => {
         const errorCode = error.code;
