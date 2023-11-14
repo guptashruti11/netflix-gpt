@@ -3,7 +3,7 @@ import { useState,useRef } from "react";
 import { checkValidData } from "../utils/validate";
 import {createUserWithEmailAndPassword ,signInWithEmailAndPassword} from "firebase/auth";
 import { auth } from "../utils/firebase";
-
+import { BG,PhotoIcon } from "../utils/constants";
 import {updateProfile } from "firebase/auth";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
@@ -33,7 +33,7 @@ const Login=()=>{
         // Signed up 
         const user = userCredential.user;
         updateProfile(user, {
-          displayName: displayName.current.value, photoURL: "https://1drv.ms/i/s!Al1wN5kIBxFoiHiWo2M0UU381CMS?e=cXe0Zg"
+          displayName: displayName.current.value, photoURL: PhotoIcon
           }).then(() => {
             const {uid,displayName,email,photoURL} = auth.currentUser;
             dispatch(addUser({uid:uid,email:email,
@@ -76,7 +76,7 @@ const Login=()=>{
         <div>
             <Header/>
         <div className="absolute">
-            <img src="https://assets.nflxext.com/ffe/siteui/vlv3/ab4b0b22-2ddf-4d48-ae88-c201ae0267e2/0efe6360-4f6d-4b10-beb6-81e0762cfe81/IN-en-20231030-popsignuptwoweeks-perspective_alpha_website_large.jpg"
+            <img src={BG}
             alt="bg-img"></img>
             </div>
             <form id="form" name="lname" onSubmit={(e)=>{e.preventDefault()}}
