@@ -3,7 +3,10 @@ export const BG="https://assets.nflxext.com/ffe/siteui/vlv3/ab4b0b22-2ddf-4d48-a
 export const PhotoIcon="https://1drv.ms/i/s!Al1wN5kIBxFoiHiWo2M0UU381CMS?e=cXe0Zg"
 export const fetch = require('node-fetch');
 
-export const url = 'https://api.themoviedb.org/3/movie/now_playing?page=1';
+export const NowPlayingMovies_URL = 'https://api.themoviedb.org/3/movie/now_playing?page=1';
+export const PopularMovies_URL = 'https://api.themoviedb.org/3/movie/popular?page=1';
+export const TopRatedMovies_URL = 'https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1';
+export const UpcomingMovies_URL = 'https://api.themoviedb.org/3/movie/upcoming?page=1';
 export const API_OPTIONS= {
     method: 'GET',
     headers: {
@@ -11,3 +14,4 @@ export const API_OPTIONS= {
       Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkMTQ0OGIwMmQ0OGFjOTg1Nzk5ZTIxZGIwMjgwNGQzNSIsInN1YiI6IjY1NTBhYmUxZDQ2NTM3MDBlMWE4YjFjOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.BSrQmGlqJkR4BN1csjWQQq5X6GKzWPh-fTkpB3Q0QG8'
     }
   };
+  export const IMG_CDN_URL="https://image.tmdb.org/t/p/w500"

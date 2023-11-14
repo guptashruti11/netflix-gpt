@@ -28,7 +28,7 @@
  - Update Store with Trailer Video Data
  - Embedded youtube video and make it auto play and mute
  - Tailwind classes to make MainContainer 
-
+ - Creating Secondary Container
  ...
  # Features
  - Sign In / Sign Up Page
