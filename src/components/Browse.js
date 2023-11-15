@@ -5,7 +5,11 @@ import SecondaryContainer from "./SecondaryContainer";
 import usePopularMovies from "../hooks/usePopularMovies";
 import useTopRatedMovies from "../hooks/useTopRatedMovies";
 import useUpComimgMovies from "../hooks/useUpComingMovies";
+import Footer from "./Footer";
+import GptSearchPage from "./GptSearchPage";
+import { useSelector } from "react-redux";
 const Browse=()=>{
+    const showgptsearch=useSelector(store=>store.gpt.showgptSearch);
     // fetching the data and putting that into the store
     // to get the data from the store we use use-selector
     useNowPlayingMovies();
@@ -15,8 +19,13 @@ const Browse=()=>{
     return (
         <div>
             <Header/>
-            <MainContainer/>
-            <SecondaryContainer/>
+            {
+               showgptsearch ?
+               (<GptSearchPage/>):(<><MainContainer/>
+               <SecondaryContainer/><Footer/></>)
+            }
+            
+            
             {/*
                 MainContainer
                 - VideoBackground
@@ -25,6 +34,7 @@ const Browse=()=>{
                 - MovieList*n(n rows)
                     - cards*n(each rows has n columns)
             */}
+            
         </div>
     );
 };
