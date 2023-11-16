@@ -48,13 +48,13 @@ const Header=()=>{
         return ()=>unsubscribe();
   },[]);
     return (
-        <div className="absolute w-screen px-8 py-2 bg-gradient-to-b from-black z-10  flex justify-between">
+        <div className="absolute w-screen px-8 py-2 bg-gradient-to-b from-black z-10  flex flex-col md:flex-row justify-between ">
         {/* <img className="w-44 " 
         src={LOGO}
         alt="logo-1"></img> */}
-        <p className="text-3xl text-red-600 pt-5">Netflix-GPT</p>
+        <p className="text-3xl text-red-700 pt-5 mx-auto md:mx-0">Netflix-GPT</p>
        {user && (
-       <div className="flex p-4">
+       <div className="flex p-4 justify-between">
        {showgptSearch && (<select className="p-2 m-2 bg-gray-900 text-white" onChange={handleLanguageChange}>
           {Language_Supported.map(lang=><option key={lang.identifier} value={lang.identifier}>{lang.name}</option>)}
           
@@ -62,7 +62,7 @@ const Header=()=>{
           <button
            className="py-2 px-4 m-2 mx-4 my-2 bg-purple-800 rounded-lg text-white"
            onClick={handleGptSearchClick}>{!showgptSearch ?"GPT Search":"Home Page"}</button>
-            <div className="w-12 h-12 bg-blue-400 border-spacing-3  text-white text-3xl px-6 py-2 rounded-sm">:)</div>
+            <div className="w-12 h-12 bg-blue-400 border-spacing-3  text-white text-3xl px-6 py-2 rounded-sm hidden md:block">:)</div>
             <button className="font-bold text-white" 
             onClick={handleSignOut}
             >(Sign Out)</button>
